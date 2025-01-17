@@ -7,21 +7,67 @@ body {
 	font-weight: 400;
 }
 
+/* /for testing */
+#wrapper,
+side-bar-wrapper,
+main-container-wrapper {
+	height: 100vh;
+}
+
+/* /for testing */
+/* #day-week-container {
+	height: 25vh;
+} */
+
 #wrapper {
 	width: 93%;
-	height: 100vh;
+	max-width: 1920px;
 	background-color: grey;
 	display: flex;
 }
 
 #side-bar-wrapper {
 	flex: 2.5;
-	height: 100vh;
 	background-color: black;
 }
 
 #main-container-wrapper {
 	flex: 7.5;
-	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	background-color: antiquewhite;
+}
+
+#day-week-container {
+	width: 97%;
+	height: fit-content;
+	background-color: blue;
+}
+
+.day-week-header {
+	display: flex;
+}
+
+
+.day-week-cards-container {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+	gap: 1em;
+}
+
+.day-week-cards{
+	min-width: fit-content;
+	width: 100%;
+	border: 2px solid white;
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	border-radius: 10%;
+}
+
+#daily-container {
+	width : 100%;
+	height : 25vh;
+	background-color: red;
 }
