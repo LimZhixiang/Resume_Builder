@@ -227,3 +227,33 @@ body {
 	margin: 0;
 	align-content: center;
 }
+
+#test {
+	background-image:url(../img/water.png);
+	background-size: 200% 100%;
+	background-repeat: no-repeat;
+	background-position:0 100px;
+	animation: waterslosh 1s linear infinite;
+}
+
+@keyframes waterslosh {
+	0%
+	{
+		background-position-x: -200px;
+	}
+	100%
+	{
+		background-position-x: 0px;
+	}
+}
+
+#humidity-content-container {
+	display: flex;
+	position: relative;
+	justify-content: center;
+}
+
+#humidity-content-container > p {
+	position: absolute;
+	top: 45%;
+}
