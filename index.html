@@ -18,6 +18,8 @@
   <body>
     <div id="wrapper">
       <div id="side-bar-wrapper">
+		<p>hi</p>
+		<p>bye</p>
 	  </div>
 	  <div id="main-container-wrapper">
 		<div id="day-week-container">
@@ -110,39 +112,55 @@
 					<p>HIMIDITY</p>
 					<div class="daily-content-container">
 						<div id="humidity-content-container">
-							<img id="test" style="zoom: .7;" src="./assets/img/water droplet.png">
+							<img id="water-wave-img" style="zoom: .7;" src="./assets/img/water droplet.png">
 							<p>75%</p>
+						</div>
+					</div>
+				</div>
+				<div class="daily-cards">
+					<p>PERCIPITATION</p>
+					<div class="daily-content-container">
+						<div id="pop-content-container">
+							<img src="./assets/img/clouds.png">
 						</div>
 					</div>
 				</div>
 				<div class="daily-cards">
 					<p>VISIBILITY</p>
 					<div class="daily-content-container">
-						
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>AIR QUALITY</p>
-					<div class="daily-content-container">
-						
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>PERCIPITATION</p>
-					<div class="daily-content-container">
-						
+						<div class="visibility-content-container">
+							<div id="visibility-range">
+								<img src="./assets/img/fog.png">
+							</div>
+							<div id="min-max-visibility">
+								<p>0</p>
+								<p>15</p>
+							</div>
+							<p>12.5km</p>
+						</div>
 					</div>
 				</div>
 				<div class="daily-cards">
 					<p>MOON PHASE</p>
 					<div class="daily-content-container">
-						
+						<div id="moon-content-container">
+							<div id="moon-vid-container">
+								<video autoplay muted loop src="./assets/img/rotating-moon.mp4"></video>
+								<span id="moon-cover">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="daily-cards">
+					<p>AIR PRESSURE</p>
+					<div class="daily-content-container">
+						<div class="semicircle-box"></div>
 					</div>
 				</div>
 			</div>
 		</div>
 	  </div>
     </div>
-    <script src="./assets/js/index.js" async defer></script>
+    <script src="./assets/js/index.js" defer></script>
   </body>
 </html>
