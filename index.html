@@ -16,151 +16,150 @@
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Share+Tech+Mono&family=Work+Sans:ital,wght@0,414;1,414&family=Zen+Dots&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div id="wrapper">
-      <div id="side-bar-wrapper">
-		<p>hi</p>
-		<p>bye</p>
-	  </div>
-	  <div id="main-container-wrapper">
-		<div id="day-week-container">
-			<div class="day-week-header">
-				<p>Today</p>
-				<p>Week</p>
+	<div id="wrapper">
+		<aside>
+			<p>hi</p>
+			<p>bye</p>
+		</aside>
+		<div id="main-wrapper">
+			<div id="forecast-container">
+				<div id="forecast-header">
+					<p>Today</p>
+					<p>Week</p>
+				</div>
+				<div id="forecast-card-wrapper">
+					<div class="forecast-cards">
+						<p>MON</p>
+						<img src="https://openweathermap.org/img/wn/01d@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>TUE</p>
+						<img src="https://openweathermap.org/img/wn/01n@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>WED</p>
+						<img src="https://openweathermap.org/img/wn/02d@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>THU</p>
+						<img src="https://openweathermap.org/img/wn/02n@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>FRI</p>
+						<img src="https://openweathermap.org/img/wn/10d@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>SAT</p>
+						<img src="https://openweathermap.org/img/wn/10n@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+					<div class="forecast-cards">
+						<p>SUN</p>
+						<img src="https://openweathermap.org/img/wn/09d@2x.png">
+						<p>12&deg;C / 24&deg;C</p>
+					</div>
+				</div>
 			</div>
-			<div class="day-week-cards-container">
-				<div class="day-week-cards">
-					<p>MONDAY</p>
-					<img src="https://openweathermap.org/img/wn/01d@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
+			<div id="daily-weather-container">
+				<div id="daily-weather-header">
+					<p>Today Weather Info</p>
 				</div>
-				<div class="day-week-cards">
-					<p>TUESDAY</p>
-					<img src="https://openweathermap.org/img/wn/01n@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
+				<div id="daily-weather-card-container">
+					<div class="daily-weather-cards">
+						<p>UV INDEX</p>
+						<div id="uv-content-container">
+							<div id="uv-display">
+								<p>12.5</p>
+								<p>High</p>
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>WIND SPEED</p>
+						<div id="windspeed-content-container">
+							<div id="wind-speed-display">
+								<p>N</p>
+								<p>E</p>
+								<p>S</p>
+								<p>W</p>
+								<img style="--angle: -45deg;" src="./assets/img/arrow img.png">
+							</div>
+							<div id="wind-speed-info">
+								<p>12.5 km/hr</p>
+								<p>NS</p>
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>SUNSET & SUNRISE</p>
+						<div id="sunrise-sunset-container">
+							<div class="sunrise-container">
+								<img src="./assets/img/sunrise.png">
+								<p>4.30am</p>
+							</div>
+							<div class="sunset-container">
+								<img src="./assets/img/sunset.png">
+								<p>7.00pm</p>
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>HIMIDITY</p>
+						<div id="humidity-content-wrapper">
+							<div id="humidity-content-container">
+								<img id="water-wave-img" style="zoom: .7;" src="./assets/img/water droplet.png">
+								<p>75%</p>
+							</div>
+						</div>
+					</div>
+					<!--<div class="daily-weather-cards">
+						<p>PERCIPITATION</p>
+						<div class="daily-content-container">
+							<div id="pop-content-container">
+								<img src="./assets/img/clouds.png">
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>VISIBILITY</p>
+						<div class="daily-content-container">
+							<div class="visibility-content-container">
+								<div id="visibility-range">
+									<img src="./assets/img/fog.png">
+								</div>
+								<div id="min-max-visibility">
+									<p>0</p>
+									<p>15</p>
+								</div>
+								<p>12.5km</p>
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>MOON PHASE</p>
+						<div class="daily-content-container">
+							<div id="moon-content-container">
+								<div id="moon-vid-container">
+									<video autoplay muted loop src="./assets/img/rotating-moon.mp4"></video>
+									<span id="moon-cover">
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="daily-weather-cards">
+						<p>AIR PRESSURE</p>
+						<div class="daily-content-container">
+							<div class="semicircle-box"></div>
+						</div>
+					</div> -->
 				</div>
-				<div class="day-week-cards">
-					<p>WEDNESDAY</p>
-					<img src="https://openweathermap.org/img/wn/02d@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
-				</div>
-				<div class="day-week-cards">
-					<p>THURSADAY</p>
-					<img src="https://openweathermap.org/img/wn/02n@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
-				</div>
-				<div class="day-week-cards">
-					<p>FRIDAY</p>
-					<img src="https://openweathermap.org/img/wn/10d@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
-				</div>
-				<div class="day-week-cards">
-					<p>SATURDAY</p>
-					<img src="https://openweathermap.org/img/wn/10n@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
-				</div>
-				<div class="day-week-cards">
-					<p>SUNDAY</p>
-					<img src="https://openweathermap.org/img/wn/09d@2x.png">
-					<p>12&deg;C / 24&deg;C</p>
-				</div>
-			</div>
 		</div>
-		<div id="daily-container">
-			<div id="daily-header">
-				<p>Today Weather Info</p>
-			</div>
-			<div id="daily-card-container">
-				<div class="daily-cards">
-					<p>UV INDEX</p>
-					<div class="daily-content-container">
-						<div id="uv-display">
-							<p>12.5</p>
-							<p>High</p>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>WIND SPEED</p>
-					<div class="daily-content-container">
-						<div id="wind-speed-display">
-							<p>N</p>
-							<p>E</p>
-							<p>S</p>
-							<p>W</p>
-							<img style="--angle: -45deg;" src="./assets/img/arrow img.png">
-						</div>
-						<div id="wind-speed-info">
-							<p>12.5 km/hr</p>
-							<p>NS</p>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>SUNSET & SUNRISE</p>
-					<div class="daily-content-container" id="sunriseset-content-container">
-						<div class="sunrise-container">
-							<img src="./assets/img/sunrise.png">
-							<p>4.30am</p>
-						</div>
-						<div class="sunset-container">
-							<img src="./assets/img/sunset.png">
-							<p>7.00pm</p>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>HIMIDITY</p>
-					<div class="daily-content-container">
-						<div id="humidity-content-container">
-							<img id="water-wave-img" style="zoom: .7;" src="./assets/img/water droplet.png">
-							<p>75%</p>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>PERCIPITATION</p>
-					<div class="daily-content-container">
-						<div id="pop-content-container">
-							<img src="./assets/img/clouds.png">
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>VISIBILITY</p>
-					<div class="daily-content-container">
-						<div class="visibility-content-container">
-							<div id="visibility-range">
-								<img src="./assets/img/fog.png">
-							</div>
-							<div id="min-max-visibility">
-								<p>0</p>
-								<p>15</p>
-							</div>
-							<p>12.5km</p>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>MOON PHASE</p>
-					<div class="daily-content-container">
-						<div id="moon-content-container">
-							<div id="moon-vid-container">
-								<video autoplay muted loop src="./assets/img/rotating-moon.mp4"></video>
-								<span id="moon-cover">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="daily-cards">
-					<p>AIR PRESSURE</p>
-					<div class="daily-content-container">
-						<div class="semicircle-box"></div>
-					</div>
-				</div>
-			</div>
 		</div>
-	  </div>
-    </div>
     <script src="./assets/js/index.js" defer></script>
   </body>
 </html>
