@@ -1,13 +1,29 @@
+:root{
+	--font-size-small: 1rem;
+	--font-size-medium: 1.41rem;
+	--font-size-large: 1.999rem;
+	--font-size-xl: 2.827rem;
+}
+
 body {
 	margin: 0;
 	justify-items: center;
-	font-family: "Zen Dots", serif;
-	font-weight: 400;
+	font-family: "Geist", serif;
+	font-size: var(--font-size-medium);
+	font-weight: 600;
 	min-height: 100vh;
+	padding: 0;
+	margin: 0;
+	color:white ;
+}
+
+#side-bar-country {
+	font-size: var(--font-size-xl);
 }
 
 #wrapper {
 	min-height: 100vh;
+	z-index: 989;
 }
 
 /* webpage main grid layout */
@@ -15,7 +31,7 @@ body {
 	display: grid;
 	width: 93%;
 	max-width: 1920px;
-	grid-template-columns: 20% 1fr;
+	grid-template-columns: 1fr auto;
 	grid-template-rows: 100%;
 	grid-template-areas:
 		"sidebar main"
@@ -24,14 +40,39 @@ body {
 
 aside {
 	grid-area: sidebar;
-	background-color: #3F4E4F;
+	background-color: rgba(63, 78, 79, .6);
+	backdrop-filter: blur(10px);
+	position: sticky;
+	min-width: fit-content;
+	top: 0;
+	left: 0;
+	height: calc(100vh - 4em);
+	padding: 2em;
 }
+
+#side-bar-header-container > p:nth-child(1) {
+	/* font-size: 40px; */
+	margin: 0;
+	background-image: url(../img/singapore_flag.webp);
+	background-clip: text;
+	-webkit-background-clip: text;
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	color:transparent;
+}
+
+#side-bar-wrapper {
+	display: flex;
+	flex-direction: column;
+}
+
 
 #main-wrapper {
 	grid-area: main;
-	background-color: #2C3639;
-	width: (100% - 4em);
-	padding: 0 2em;
+	background-color: rgb(44, 54, 57, .6);
+	backdrop-filter: blur(10px);
+	width: calc(100% - 4em);
+	padding: 2em;
 }
 
 
@@ -50,10 +91,71 @@ aside {
 	}
 }
 
+#forecast-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+#forecast-label-container {
+	display: flex;
+	position: relative;
+	width: 5em;
+	height: 2.5em;
+	aspect-ratio: 1 / 1;
+	color: white;
+	border-radius: 999px;
+	border: 3px solid white;
+	align-items: center;
+	padding: 0 .2em;
+}
+
+#forecast-option-checkbox:checked + #forecast-label-container #forecast-option-circle {
+	transform: translateX(calc(100% + 0.8em));
+}
+
+#forecast-option-circle {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	width: 1.6em;
+	aspect-ratio: 1 / 1;
+	padding: .2em;
+	background-color: black;
+	border: 2px solid red;
+	border-radius: 999px;
+	overflow: hidden;
+	transition: transform 0.6s ease;
+}
+
+#forecast-option-circle > svg {
+	position: absolute;
+	width: 1.6em;
+	transition: opacity 1s ease;
+}
+
+#daily-option {
+	opacity: 1;
+}
+
+#weekly-option {
+	opacity: 0;
+}
+
+
+#forecast-option-checkbox:checked + #forecast-label-container #daily-option {
+	opacity: 0;
+}
+
+#forecast-option-checkbox:checked + #forecast-label-container #weekly-option {
+	opacity: 1;
+}
 
 /* Forecast container CSS */
 #forecast-header > p {
 	display: inline-block;
+	font-size: var(--font-size-large);
 }
 
 #forecast-card-wrapper {
@@ -103,8 +205,8 @@ footer {
 	display: flex;
 	flex-direction: column;
 	justify-items: center;
+	align-items: center ;
 	min-width: fit-content;
-	max-width: 200px;
 	flex: 1 1 25%;
 	padding: 1em 2em;
 	border: 4px solid #A27B5C;
@@ -118,6 +220,10 @@ footer {
 	text-align: center;
 }
 
+#daily-weather-header > p {
+	font-size: var(--font-size-large);
+}
+
 /* UV content css */
 #uv-content-container {
 	display: flex;
@@ -129,8 +235,8 @@ footer {
 
 #uv-display {
 	flex: 1 1 auto;
-	min-width: 120px;
-	max-width: 150px;
+	min-width: 110px;
+	max-width: 130px;
 	aspect-ratio: 1 / 1;
 	background-color: white;
 	align-content: center;
@@ -153,7 +259,7 @@ footer {
 
 #wind-speed-display {
 	position: relative;
-	width: 150px;
+	width: 130px;
 	aspect-ratio: 1 / 1;
 	border-radius: 100%;
 	display: flex;
@@ -164,7 +270,7 @@ footer {
 
 #wind-speed-display > p {
 	position: absolute;
-	font-size: 16px;
+	/* font-size: 16px; */
 	margin: 0;
 }
 
@@ -190,7 +296,7 @@ footer {
 
 #wind-speed-info > p {
 	margin: .5rem 0;
-	font-size: large;
+	/* font-size: large; */
 }
 
 #wind-speed-display > img {
@@ -246,7 +352,7 @@ footer {
 
 #humidity-content-container > p {
 	position: absolute;
-	top: 45%;
+	top: 40%;
 }
 
 #water-wave-img {
@@ -265,4 +371,119 @@ footer {
 	{
 		background-position-x: 0px;
 	}
+}
+
+/* precipitation CSS */
+#pop-wrapper {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	max-width: 200px;
+	min-height: 170px;
+	height: 100%;
+	width: 100%;
+}
+
+#pop-container {
+	display: flex;
+	flex-direction: column;
+	width: 70%;
+	height: 90%;
+	object-fit: contain;
+	border-bottom: 2px solid white;
+	position: absolute;
+	align-content: center;
+	justify-items: center;
+	font-size: var(--font-size-large);
+}
+
+#pop-container > img{
+	width: 100%;
+	aspect-ratio: 2.5 / 1;
+	z-index: 2;
+}
+
+@keyframes raindrops {
+	0%
+	{
+
+	}
+	70%
+	{
+		top: calc(100% - 5px);
+		transform: scale(1);
+	}
+	100%
+	{	
+		top:calc(100% - 5px);
+		transform: scale(0);
+	}
+}
+
+#pop-container > p {
+	height: 100%;
+	z-index: 99;
+	color: rgb(255, 216, 132);
+	display: flex;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	/* font-size: 24px; */
+}
+
+/* visibility container CSS */
+#visibility-wrapper {
+	display: flex;
+	flex-direction: column;
+	max-width: 250px;
+	width: 100%;
+	height: 100%;
+	justify-content: center;
+}
+
+#visibility-container {
+	position: relative;
+	height: 100%;
+	min-height: 100px;
+	max-height: 120px;
+	border-bottom: 2px solid white;
+	background-image: url(../img/mountains.png);
+	background-size: 50% 100%;
+	background-repeat: no-repeat;
+	background-position: 80% 22px;
+}
+
+#visibility-container > img {
+	position: absolute;
+}
+
+#min-max-visibility {
+	display: flex;
+	justify-content: space-between;
+}
+
+#min-max-visibility > p {
+	margin: 0;
+}
+
+#visibility-wrapper > p {
+	margin: 0;
+	text-align: center;
+	/* font-size: larger; */
+}
+
+iframe {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+}
+
+body > video {
+	position: fixed;
+	object-fit: fill;
+	top:0;
+	right: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: -1;
 }

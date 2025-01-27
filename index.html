@@ -13,19 +13,35 @@
     <link rel="stylesheet" href="./assets/css/index.css" />
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&family=Share+Tech+Mono&family=Work+Sans:ital,wght@0,414;1,414&family=Zen+Dots&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
   </head>
   <body>
+	<video autoplay loop muted plays-inline>
+		<source src="./assets/img/background video.mp4" type="video/mp4">
+	</video>
 	<div id="wrapper">
 		<aside>
-			<p>hi</p>
-			<p>bye</p>
+			<div id="side-bar-wrapper">
+				<div id="side-bar-header-container">
+					<p id="side-bar-country">SINGAPORE</p>
+					<p>LAT:</p>
+					<P>LONG:</P>
+				</div>
+			</div>
 		</aside>
 		<div id="main-wrapper">
 			<div id="forecast-container">
 				<div id="forecast-header">
-					<p>Today</p>
-					<p>Week</p>
+					<p>Weather Forecast</p>
+					<div id="forecast-option-container">
+						<input type="checkbox" id="forecast-option-checkbox" hidden>
+						<label for="forecast-option-checkbox" id="forecast-label-container">
+							<div id="forecast-option-circle">
+								<svg id="daily-option" fill="#ffffff" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>clock</title> <path d="M16 0.75c-8.422 0-15.25 6.828-15.25 15.25s6.828 15.25 15.25 15.25c8.422 0 15.25-6.828 15.25-15.25v0c-0.010-8.418-6.832-15.24-15.249-15.25h-0.001zM16 28.75c-7.042 0-12.75-5.708-12.75-12.75s5.708-12.75 12.75-12.75c7.042 0 12.75 5.708 12.75 12.75v0c-0.008 7.038-5.712 12.742-12.749 12.75h-0.001zM17.25 15.482v-9.482c0-0.69-0.56-1.25-1.25-1.25s-1.25 0.56-1.25 1.25v0 10c0 0.345 0.14 0.658 0.366 0.884l3.999 4.001c0.226 0.226 0.539 0.366 0.884 0.366 0.691 0 1.251-0.56 1.251-1.251 0-0.345-0.14-0.658-0.366-0.884l0 0z"></path> </g></svg>
+								<svg id="weekly-option" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 10V7C20 5.89543 19.1046 5 18 5H6C4.89543 5 4 5.89543 4 7V10M20 10V19C20 20.1046 19.1046 21 18 21H6C4.89543 21 4 20.1046 4 19V10M20 10H4M8 3V7M16 3V7" stroke="#ffffff" stroke-width="2" stroke-linecap="round"></path> <rect x="13" y="14" width="5" height="5" rx="1" fill="#ffffff"></rect> </g></svg>
+							</div>
+						</label>
+					</div>
 				</div>
 				<div id="forecast-card-wrapper">
 					<div class="forecast-cards">
@@ -109,7 +125,7 @@
 						</div>
 					</div>
 					<div class="daily-weather-cards">
-						<p>HIMIDITY</p>
+						<p>HUMIDITY</p>
 						<div id="humidity-content-wrapper">
 							<div id="humidity-content-container">
 								<img id="water-wave-img" style="zoom: .7;" src="./assets/img/water droplet.png">
@@ -117,30 +133,29 @@
 							</div>
 						</div>
 					</div>
-					<!--<div class="daily-weather-cards">
+					<div class="daily-weather-cards">
 						<p>PERCIPITATION</p>
-						<div class="daily-content-container">
-							<div id="pop-content-container">
+						<div id="pop-wrapper">
+							<div id="pop-container">
 								<img src="./assets/img/clouds.png">
+								<p>25%</p>
 							</div>
-						</div>
+						</div>	
 					</div>
 					<div class="daily-weather-cards">
 						<p>VISIBILITY</p>
-						<div class="daily-content-container">
-							<div class="visibility-content-container">
-								<div id="visibility-range">
-									<img src="./assets/img/fog.png">
-								</div>
-								<div id="min-max-visibility">
-									<p>0</p>
-									<p>15</p>
-								</div>
-								<p>12.5km</p>
+						<div id="visibility-wrapper">
+							<div id="visibility-container">
+								<!-- <img src="./assets/img/fog.png"> -->
 							</div>
+							<div id="min-max-visibility">
+								<p>0</p>
+								<p>15</p>
+							</div>
+							<p>12.5km</p>
 						</div>
 					</div>
-					<div class="daily-weather-cards">
+					<!--<div class="daily-weather-cards">
 						<p>MOON PHASE</p>
 						<div class="daily-content-container">
 							<div id="moon-content-container">
@@ -158,7 +173,7 @@
 						</div>
 					</div> -->
 				</div>
-		</div>
+			</div>
 		</div>
     <script src="./assets/js/index.js" defer></script>
   </body>

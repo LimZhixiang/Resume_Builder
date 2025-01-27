@@ -24,6 +24,7 @@ const rainGeneration = (containerId, numberofdrops) => {
 
 	for (let i = 1; i <= numberofdrops; i++) {
 		const span = document.createElement('span');
+		span.style.zIndex = 1;
 		span.style.width = '5px';
 		span.style.height = '5px';
 		span.style.position = 'absolute';
@@ -39,7 +40,7 @@ const rainGeneration = (containerId, numberofdrops) => {
 
 // Creating rain effect
 document.addEventListener('DOMContentLoaded', async () => {
-	rainGeneration('pop-content-container', 19);
+	rainGeneration('pop-container', 26);
 });
 
 
